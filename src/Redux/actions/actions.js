@@ -11,3 +11,10 @@ export const addText = (txt) => {
         payload: txt
     }
 }
+
+export const deleteContact = (id) => {
+    return {
+        type: 'DELETE_CONTACT',
+        payload: id
+    }
+}

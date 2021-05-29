@@ -9,7 +9,7 @@ import { addText } from './Redux/actions/actions'
 function App() {
   let history = useHistory()
   const stttate = useSelector((state) => state)
-  const contactList = stttate.contact.allContact;
+  const contactList = stttate.contact.allContacts;
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')

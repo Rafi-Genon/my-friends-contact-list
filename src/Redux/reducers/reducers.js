@@ -1,5 +1,5 @@
 const intialState = {
-    allContact: [
+    allContacts: [
         {
             "id": 1,
             "name": "Leanne Graham",
@@ -37,8 +37,14 @@ export const contactReducer = (state = intialState, action) => {
         }
         case 'ADD_TEXT': {
             return {
-                // ...state,
-                allContact: [...state.allContact, action.payload]
+                ...state,
+                allContacts: [...state.allContacts, action.payload]
+            }
+        }
+        case 'DELETE_CONTACT': {
+            return{
+                ...state,
+                allContacts:state.allContacts.filter((contact)=>contact.id != action.payload)
             }
         }
         default: {
