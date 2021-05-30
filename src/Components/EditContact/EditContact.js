@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { updateContact, getContact } from '../../Redux/actions/actions'
-const EditContact = () => {
+const EditContact = ({ id, submitUpdate }) => {
 
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [name, setName] = useState('')
     const dispatch = useDispatch()
-    const { id } = useParams()
+    // const { id } = useParams()
     const contact = useSelector((state) => state.contact.contact)
 
     useEffect(() => {
@@ -28,6 +28,7 @@ const EditContact = () => {
             email: email,
         });
         dispatch(updateContact(updatedContact))
+        submitUpdate()
     }
 
 

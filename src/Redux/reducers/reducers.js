@@ -26,7 +26,7 @@ const intialState = {
         },
     ],
     contact: null,
-    aaaaaaaaaaaaaaaaaaaa: 'sd'
+    isUpdate: false,
 
 }
 

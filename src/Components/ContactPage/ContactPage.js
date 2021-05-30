@@ -15,7 +15,7 @@ const ContactPage = () => {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const dispatch = useDispatch()
-    
+
     const submitData = () => {
         const newID = {
             id: shortid.generate(),
@@ -28,14 +28,17 @@ const ContactPage = () => {
 
     return (
         <div>
-            <h2>Your contact list- {contactList.length}</h2>
-            {
-                contactList.map(contact => <Contacts contact={contact} key={contact.id}></Contacts>)
-            }
+            <h2 style={{color: 'blue'}}>Your contact list- {contactList.length}</h2>
+
+            <h3>add new contact</h3>
             <input type="text" placeholder="Name" onChange={(e) => { setName(e.target.value) }} />
             <input type="text" placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }} />
             <input type="text" placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
             <button onClick={() => { submitData() }}>submit</button>
+
+            {
+                contactList.map(contact => <Contacts contact={contact} key={contact.id}></Contacts>)
+            }
         </div>
     );
 };

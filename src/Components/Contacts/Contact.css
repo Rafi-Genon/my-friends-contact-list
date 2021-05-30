@@ -1,0 +1,9 @@
+.contact-items {
+    /* border: 0.25px solid #6464fa; */
+    margin: 20px;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: #f59090 1px 0.75px 15px;
+}
+
+/* style={{ border: '2px solid blue', margin: '20px', padding: '25px' }} */
