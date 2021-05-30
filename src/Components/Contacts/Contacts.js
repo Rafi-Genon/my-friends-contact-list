@@ -27,7 +27,7 @@ const Contacts = ({ contact }) => {
                         ? <button className='btn btn-primary mx-3' onClick={() => { setIsClicked(!isClicked) }}>Update</button>
                         : <EditContact id={id} submitUpdate={submitUpdate} />
                 }
-                <button className='btn btn-danger' onClick={() => { dispatch(deleteContact(id)) }}>Remove</button>
+                <button className='btn btn-danger' onClick={() => { dispatch(deleteContact(id)) }}>Remove Contact</button>
             </div>
         </div>
     );
