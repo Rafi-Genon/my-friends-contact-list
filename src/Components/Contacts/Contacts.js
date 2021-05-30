@@ -14,21 +14,21 @@ const Contacts = ({ contact }) => {
     const submitUpdate = () => {
         setIsClicked(false)
     }
-    return (
-        <div className="contact-items" >
-            <p>{name}</p>
-            <p>{phone}</p>
-            <p>{email}</p>
-            {/* <Link to={`/edit/${id}`}><button>Update</button></Link> */}
-
-            {/* <button onClick={() => { setIsClicked(!isClicked) }}>Update2</button> */}
-            {
-                isClicked === false
-                    // isUpdate === false
-                    ? <button onClick={() => { setIsClicked(!isClicked) }}>Update</button>
-                    : <EditContact id={id} submitUpdate={submitUpdate} />
-            }
-            <button onClick={() => { dispatch(deleteContact(id)) }}>Remove</button>
+    return ( 
+        <div className="contact-items m-5 row" >
+            <div className="col-md-6 col-sm-12 col-lg-6">
+                <p className="contact-name">{name}</p>
+                <p>{phone}</p>
+                <p>{email}</p>
+            </div>
+            <div className="col-md-6 col-sm-12 col-lg-6">
+                {
+                    isClicked === false
+                        ? <button className='btn btn-primary mx-3' onClick={() => { setIsClicked(!isClicked) }}>Update</button>
+                        : <EditContact id={id} submitUpdate={submitUpdate} />
+                }
+                <button className='btn btn-danger' onClick={() => { dispatch(deleteContact(id)) }}>Remove</button>
+            </div>
         </div>
     );
 };
