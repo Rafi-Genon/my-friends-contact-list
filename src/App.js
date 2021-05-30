@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import EditContact from './Components/EditContact/EditContact';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

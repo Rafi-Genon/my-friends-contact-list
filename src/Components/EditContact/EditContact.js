@@ -34,10 +34,15 @@ const EditContact = ({ id, submitUpdate }) => {
 
     return (
         <div>
-            <input type="text" value={name} placeholder="Name" onChange={(e) => { setName(e.target.value) }} />
-            <input type="text" value={phone} placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }} />
-            <input type="text" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
-            <button onClick={() => { onUpdateContact() }}>submit</button>
+            {/* <div classNamw="form-group"> */}
+                {/* <label for="exampleInputEmail1">Email address</label> */}
+                {/* <input type="email" className="form-control" id="exampleInputEmail1" ariaDescribedby="emailHelp" placeholder="Enter email" /> */}
+                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+            {/* </div> */}
+            <input type="text" className="form-control" value={name} placeholder="Name" onChange={(e) => { setName(e.target.value) }} />
+            <input type="text" className="form-control" value={phone} placeholder="Phone" onChange={(e) => { setPhone(e.target.value) }} />
+            <input type="text" className="form-control" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
+            <button className="btn btn-success" onClick={() => { onUpdateContact() }}>submit</button>
         </div>
     );
 };

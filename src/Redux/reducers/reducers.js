@@ -38,7 +38,7 @@ export const contactReducer = (state = intialState, action) => {
         case 'ADD_TEXT': {
             return {
                 ...state,
-                allContacts: [...state.allContacts, action.payload]
+                allContacts: [action.payload, ...state.allContacts]
             }
         }
         case 'DELETE_CONTACT': {
