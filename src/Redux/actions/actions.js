@@ -18,3 +18,18 @@ export const deleteContact = (id) => {
         payload: id
     }
 }
+
+export const updateContact = (id) => {
+    return {
+        type: 'UPDATE_CONTACT',
+        payload: id
+    }
+}
+
+export const getContact = (id) => {
+    return {
+        type: 'GET_CONTACT',
+        payload: id
+    }
+}
+

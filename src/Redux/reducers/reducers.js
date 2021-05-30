@@ -25,7 +25,7 @@ const intialState = {
             "phone": "493-170-9623 x156",
         },
     ],
-    adfa: 'adfaf',
+    contact: null,
     aaaaaaaaaaaaaaaaaaaa: 'sd'
 
 }
@@ -42,11 +42,33 @@ export const contactReducer = (state = intialState, action) => {
             }
         }
         case 'DELETE_CONTACT': {
-            return{
+            return {
                 ...state,
-                allContacts:state.allContacts.filter((contact)=>contact.id != action.payload)
+                allContacts: state.allContacts.filter((contact) => contact.id != action.payload)
             }
         }
+
+
+        case 'GET_CONTACT':
+            let arr = state.allContacts.filter((contact) => contact.id == action.payload);
+            console.log(arr);
+            arr = arr.values();
+            console.log('arr after value', arr);
+            for (let val of arr) {
+                arr = val;
+            }
+            return {
+                ...state,
+                contact: arr,
+            };
+
+        case 'UPDATE_CONTACT':
+            return {
+                ...state,
+                allContacts: state.allContacts.map((contact) =>
+                    contact.id == action.payload.id ? action.payload : contact
+                ),
+            };
         default: {
             return state
         }
